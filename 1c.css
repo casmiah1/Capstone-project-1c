@@ -1,0 +1,546 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #253347;
+  --muted: #5e6875;
+  --blue: #345ff6;
+  --pale-blue: #e7f5fb;
+  --shadow: 0 18px 42px rgba(35, 66, 100, 0.10);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.hero {
+  min-height: 430px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 48px 8%;
+  margin: 0 -16px 70px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(125deg, #f5fcfd, #dcecff);
+}
+
+.hero-content {
+  width: 52%;
+  max-width: 530px;
+}
+
+.logo {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #b6d5e7;
+  border-radius: 50%;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 5px 2px;
+  overflow: hidden;
+}
+
+.logo span {
+  height: 3px;
+  width: 100%;
+  border-radius: 50%;
+  background: #b6d5e7;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.hero-copy p,
+.meaning-copy p,
+.limitations-intro p,
+.limit-card p,
+.habit p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hero-copy p {
+  max-width: 440px;
+}
+
+.calculator {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-35%);
+  width: min(420px, 43%);
+  padding: 26px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.calculator h2 {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.units {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.units label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.units input {
+  accent-color: var(--blue);
+  width: 18px;
+  height: 18px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #aab2bc;
+  border-radius: 10px;
+  padding: 0 14px;
+  height: 52px;
+  margin-top: 5px;
+}
+
+.input-wrap input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: var(--ink);
+  font: inherit;
+  font-size: 18px;
+  background: transparent;
+}
+
+.input-wrap b {
+  color: #3458b4;
+  font-size: 14px;
+}
+
+.result {
+  background: var(--blue);
+  color: #fff;
+  padding: 18px 20px;
+  border-radius: 10px 42px 42px 10px;
+  min-height: 94px;
+}
+
+.result h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.result p {
+  font-size: 12px;
+}
+
+.section-wrap {
+  width: 88%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.meaning {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: center;
+  margin-bottom: 75px;
+}
+
+.person-picture {
+  height: 280px;
+  position: relative;
+  background: #e6f5fc;
+  border-radius: 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+
+.person-picture img {
+  width: 100%;
+  height: 112%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 22px;
+  mix-blend-mode: multiply;
+}
+
+.meaning-copy h2,
+.limitations-intro h2 {
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.habits {
+  background: linear-gradient(110deg, #f4fbfd, #f6f9ff);
+  border-radius: 24px;
+  padding: 48px 8%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+  margin: 0 -16px 80px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+.pink { background: #fbe4ef; color: #d94f9b; }
+.orange { background: #fff0df; color: #d99a4d; }
+.teal { background: #def7f5; color: #3ebbb4; }
+
+.habit h3 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.limitations {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8%;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.limitations-intro p {
+  max-width: 430px;
+}
+
+.limitation-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.limit-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.limit-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.limit-card p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.gender {
+  grid-column: 2;
+}
+
+.age { grid-column: 1; }
+.muscle { grid-column: 2; }
+.pregnancy { grid-column: 1; }
+.race { grid-column: 2; }
+
+.mini-icon {
+  font-size: 21px;
+  font-weight: normal;
+}
+.coral { color: #df8c72; }
+.teal-text { color: #39b7b2; }
+.purple { color: #9c6be0; }
+.yellow { color: #d3c84e; }
+.pink-text { color: #d55ba5; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 24px 16px 35px;
+  background: #f7fbfd;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero {
+    padding: 42px 6%;
+    min-height: 470px;
+  }
+
+  .hero::before {
+    width: 100%;
+  }
+
+  .hero-content {
+    width: 46%;
+  }
+
+  .logo {
+    margin-bottom: 45px;
+  }
+
+  .calculator {
+    right: 5%;
+    width: 48%;
+    padding: 22px;
+  }
+
+  .section-wrap {
+    width: 92%;
+  }
+
+  .meaning {
+    gap: 6%;
+  }
+
+  .person-picture {
+    height: 240px;
+  }
+
+  .habits {
+    padding: 38px 5%;
+    gap: 25px;
+  }
+
+  .limitations {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .limitations-intro p {
+    max-width: 650px;
+  }
+
+  .limitation-cards {
+    max-width: 750px;
+    width: 100%;
+    margin-left: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  main {
+    padding: 0 12px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 28px 22px 0;
+    margin: 0 -12px 45px;
+    min-height: auto;
+  }
+
+  .hero::before {
+    width: 100%;
+    height: 560px;
+    border-radius: 0 0 22px 22px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .logo {
+    margin-bottom: 35px;
+  }
+
+  h1 {
+    font-size: 2.35rem;
+    letter-spacing: -1.2px;
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .calculator {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    padding: 22px;
+    margin: 0 0 25px;
+  }
+
+  .calculator h2 {
+    font-size: 17px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .input-wrap {
+    height: 54px;
+  }
+
+  .meaning {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .person-picture {
+    height: 260px;
+    margin: 0 12px;
+  }
+
+  .person-picture img {
+    height: 108%;
+  }
+
+  .meaning-copy {
+    padding: 0 10px;
+  }
+
+  .meaning-copy h2,
+  .limitations-intro h2 {
+    font-size: 2rem;
+  }
+
+  .habits {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 32px 25px;
+    margin: 0 -12px 55px;
+    border-radius: 18px;
+  }
+
+  .icon {
+    margin-bottom: 14px;
+  }
+
+  .habit h3 {
+    margin-bottom: 8px;
+  }
+
+  .limitations {
+    width: 100%;
+    margin-bottom: 55px;
+    gap: 28px;
+  }
+
+  .limitations-intro {
+    padding: 0 8px;
+  }
+
+  .limitation-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .limit-card,
+  .gender,
+  .age,
+  .muscle,
+  .pregnancy,
+  .race {
+    grid-column: 1;
+  }
+
+  .limit-card {
+    padding: 21px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 760px) {
+  .hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-content {
+    width: 42%;
+  }
+
+  .calculator {
+    width: 53%;
+    right: 3%;
+    padding: 18px;
+  }
+
+  .fields {
+    gap: 10px;
+  }
+
+  .input-wrap {
+    padding: 0 9px;
+  }
+}
